@@ -1,0 +1,16 @@
+.my-card {
+  min-width: 300px;
+  margin: 10px;
+  border: 1px solid red;
+}
+
+.my-carrusel {
+  border: 1px solid black;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+}
