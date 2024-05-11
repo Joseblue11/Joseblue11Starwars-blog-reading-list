@@ -1,31 +1,44 @@
 const getState = ({ getStore, getActions, setStore }) => {
-	return {
-		store: {
+  return {
+    store: {
+      planets: [],
+      characters: [],
+      DetailCharacter:{},
+    },
+    actions: {
+      getPlanets: async () => {
+        try {
+          const response = await fetch("https://swapi.dev/api/planets");
+          const data = await response.json();
+          console.log(data);
+          setStore({ planets: data.results });
+        } catch (error) {
+          console.error("Error fetching planets:", error);
+        }
+      },
+      getCharacters: async () => {
+        try {
+          const response = await fetch("https://swapi.dev/api/people/");
+          const data = await response.json();
+          console.log(data);
+          setStore({ characters: data.results });
+        } catch (error) {
+          console.error("Error fetching characters:", error);
+        }
+      },
+      getDetailCharacters: async (id) => {
+        try {
+          const response = await fetch(`https://swapi.dev/api/people/${id}`);
+          const data = await response.json();
+          console.log(data);
+          setStore({ DetailCharacter: data});
+        } catch (error) {
+          console.error("Error fetching characters:", error);
+        }
+      },
 
-			planets: []
-			
-
-
-		},
-		actions: {
-			// Use getActions to call a function within a fuction
-
-			getPlanets:async () => {
-				try {
-				const response = await fetch("https://swapi.dev/api/planets")
-					const data = response.json()
-					console.log(data.results)
-					setStore({planets:data.results})
-				} catch (error) {
-				console.log(error)	
-				}
-			//	
-			//	  .then((res) => res.json())
-			//	  .then((data) => setStore({planets:data.results}))
-			//	  .catch((err) => console.error(err));
-			  }
-		} 
-	};
+    },
+  };
 };
 
 export default getState;

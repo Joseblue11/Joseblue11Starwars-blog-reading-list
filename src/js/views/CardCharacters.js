@@ -1,25 +1,30 @@
 import React from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { Link } from "react-router-dom";
 
-export const Card = ({ items, id }) => {
+export const CardCharacters = ({ items, id }) => {
   console.log(items);
   return (
     <div className="my-card">
       <img
-        src="https://img.freepik.com/vector-gratis/fondo-galaxia-realista_52683-12122.jpg?t=st=1714960251~exp=1714963851~hmac=764f1d6be42e60b3f4971d520327b8738b29cb4b803fc8eada2957a3a428bd90&w=740"
+        src={
+          "https://starwars-visualguide.com/assets/img/characters/" +
+          id +
+          ".jpg"
+        }
         className="card-img-top"
-        alt="..."
+        alt={items.name}
       />
       <div className="card-body">
-        {/* <h5 className="card-title">{items.name}</h5> */}
-        <p className="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
+        <h5 className="card-title">{items.name}</h5>
+        <p>gender:{items.gender}</p>
+        <p>hair color:{items.hair_color}</p>
+        <p>eye color:{items.eye_color}</p>
+        <p>height:{items.height}</p>
         <div className="icons">
-          <a href="#" className="btn btn-outline-primary">
+          <Link to={`/characters/${id}`} className="btn btn-outline-primary">
             Go somewhere
-          </a>
+          </Link>
           <button type="button" class="btn btn-outline-warning">
             <svg
               xmlns="http://www.w3.org/2000/svg"
