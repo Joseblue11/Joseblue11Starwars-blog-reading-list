@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import { useActionData, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/cardDetail.css";
 

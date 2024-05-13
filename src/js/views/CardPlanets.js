@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { Link, useActionData } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const CardPlanets = ({ items, id }) => {
   const { actions } = useContext(Context);
