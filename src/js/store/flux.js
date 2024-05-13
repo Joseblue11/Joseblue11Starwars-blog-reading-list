@@ -3,7 +3,8 @@ const getState = ({ getStore, getActions, setStore }) => {
     store: {
       planets: [],
       characters: [],
-      DetailCharacter:{},
+      DetailCharacter: {},
+      favorites: [{ name: "Jose Antonio" },],
     },
     actions: {
       getPlanets: async () => {
@@ -11,7 +12,8 @@ const getState = ({ getStore, getActions, setStore }) => {
           const response = await fetch("https://swapi.dev/api/planets");
           const data = await response.json();
           console.log(data);
-          setStore({ planets: data.results });
+          let store = getStore();
+          setStore({ ...store, planets: data.results });
         } catch (error) {
           console.error("Error fetching planets:", error);
         }
@@ -21,7 +23,8 @@ const getState = ({ getStore, getActions, setStore }) => {
           const response = await fetch("https://swapi.dev/api/people/");
           const data = await response.json();
           console.log(data);
-          setStore({ characters: data.results });
+          let store = getStore();
+          setStore({ ...store, characters: data.results });
         } catch (error) {
           console.error("Error fetching characters:", error);
         }
@@ -31,12 +34,18 @@ const getState = ({ getStore, getActions, setStore }) => {
           const response = await fetch(`https://swapi.dev/api/people/${id}`);
           const data = await response.json();
           console.log(data);
-          setStore({ DetailCharacter: data});
+          let store = getStore();
+          setStore({ ...store, DetailCharacter: data });
         } catch (error) {
           console.error("Error fetching characters:", error);
         }
       },
 
+      favorites: (Item) => {
+        console.log("Favorites flux esta funcionando");
+        let store = getStore();
+        setStore({ ...store, favorites: [...store.favorites, Item] });
+      },
     },
   };
 };

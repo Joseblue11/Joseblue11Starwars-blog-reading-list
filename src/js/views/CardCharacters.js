@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import { Context } from "../store/appContext";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { Link } from "react-router-dom";
+import { Link, useActionData } from "react-router-dom";
 
 export const CardCharacters = ({ items, id }) => {
+  const { actions } = useContext(Context);
+  const handlerFavorite = (item) => {
+    actions.favorites(item);
+    console.log("handlerFavorite esta funcionando");
+  };
+
   console.log(items);
   return (
     <div className="my-card">
@@ -25,7 +32,11 @@ export const CardCharacters = ({ items, id }) => {
           <Link to={`/characters/${id}`} className="btn btn-outline-primary">
             Go somewhere
           </Link>
-          <button type="button" class="btn btn-outline-warning">
+          <button
+            type="button"
+            class="btn btn-outline-warning"
+            onClick={() => handlerFavorite(items)}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
