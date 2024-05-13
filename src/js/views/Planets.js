@@ -8,7 +8,7 @@ const Planets = () => {
   useEffect(() => {
     actions.getPlanets();
   }, []);
-
+  console.log(store.planets);
   return (
     <div>
       <h1 className="text-danger">Planets</h1>

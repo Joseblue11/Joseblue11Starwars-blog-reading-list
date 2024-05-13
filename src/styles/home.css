@@ -1,11 +1,19 @@
+.home {
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically (optional) */
+  background-image: url(https://img.freepik.com/vector-gratis/fondo-nevado-navidad_1048-9078.jpg?t=st=1715588478~exp=1715592078~hmac=c2b0dcda3f2e9c81593ee2c8d65c2ad5a39f5a774cfa9df0c41f37a694ac6179&w=740);
+}
+
 .my-card {
   min-width: 300px;
+  max-width: 400px;
   margin: 10px;
-  border: 1px solid red;
+  background-color: rgba(82, 82, 82, 0.363);
 }
 
 .my-carrusel {
-  border: 1px solid black;
+  margin-left: 120px;
+  margin-right: 120px;
   display: flex;
   overflow-x: scroll;
 }
@@ -13,4 +21,8 @@
 .icons {
   display: flex;
   justify-content: space-between;
+}
+
+.text-danger {
+  margin-left: 150px;
 }

@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import { Context } from "../store/appContext";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { Link, useActionData } from "react-router-dom";
 
 export const CardPlanets = ({ items, id }) => {
+  const { actions } = useContext(Context);
+  const handlerFavorite = (item) => {
+    actions.favorites(item);
+    console.log("handlerFavorite esta funcionando");
+  };
+
   console.log(items);
   return (
     <div className="my-card">
@@ -13,16 +21,16 @@ export const CardPlanets = ({ items, id }) => {
         alt={items.name}
       />
       <div className="card-body">
-        <h5 className="card-title">{items.name}</h5>
-        <p>climate:{items.climate}</p>
-        <p>gravity:{items.gravity}</p>
-        <p>orbital period:{items.orbital_period}</p>
-        <p>rotation period:{items.rotation_period}</p>
+        <h3 className="card-title">{items.name}</h3>
         <div className="icons">
-          <a href="#" className="btn btn-outline-primary">
-            Go somewhere
-          </a>
-          <button type="button" class="btn btn-outline-warning">
+          <Link to={`/planets/${id}`} className="btn btn-outline-primary">
+            Saber mas
+          </Link>
+          <button
+            type="button"
+            class="btn btn-outline-warning"
+            onClick={() => handlerFavorite(items)}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"

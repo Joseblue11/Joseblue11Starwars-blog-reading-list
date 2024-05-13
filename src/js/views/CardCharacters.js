@@ -23,14 +23,10 @@ export const CardCharacters = ({ items, id }) => {
         alt={items.name}
       />
       <div className="card-body">
-        <h5 className="card-title">{items.name}</h5>
-        <p>gender:{items.gender}</p>
-        <p>hair color:{items.hair_color}</p>
-        <p>eye color:{items.eye_color}</p>
-        <p>height:{items.height}</p>
+        <h3 className="card-title">{items.name}</h3>
         <div className="icons">
           <Link to={`/characters/${id}`} className="btn btn-outline-primary">
-            Go somewhere
+            Saber mas
           </Link>
           <button
             type="button"

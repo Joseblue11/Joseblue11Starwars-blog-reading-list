@@ -1,3 +1,9 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
 .navbar {
-  background-color: black;
+  background-color: gray;
+}
+.logo {
+  width: 100%;
+  height: 100%;
 }

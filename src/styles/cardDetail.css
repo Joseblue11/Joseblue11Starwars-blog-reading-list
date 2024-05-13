@@ -1,0 +1,39 @@
+.Detail {
+  border: 1px solid black;
+  background-image: url(https://img.freepik.com/foto-gratis/cielo-estrellado_1048-11828.jpg?w=740&t=st=1715586317~exp=1715586917~hmac=d759f70e521c096dd7863e77551b44ae58b4255a9dc92e4bf16630c8cc672118);
+}
+
+.Detail1 {
+  background-color: rgba(82, 82, 82, 0.363);
+  width: 70%;
+  margin-bottom: 30px;
+}
+.cardDetail1 {
+  /* Existing styles for .cardDetail1 */
+  width: 80%; /* Adjust width as needed */
+}
+
+.cardDetail2 {
+  /* Existing styles for .cardDetail2 */
+  width: 100%; /* Set full width within .cardDetail1 */
+}
+.FooterDetail {
+  display: flex;
+  justify-content: space-around;
+  color: rgb(202, 9, 9);
+  border-top: 1px solid rgb(202, 9, 9);
+  padding-top: 30px;
+  margin-top: 30px;
+}
+
+.text {
+  color: white;
+  text-align: justify;
+}
+
+.img-fluid {
+  margin-top: 40px;
+}
+.card-title {
+  color: white;
+}
