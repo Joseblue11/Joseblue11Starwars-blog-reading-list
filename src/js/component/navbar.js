@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "../../styles/navbar.css";
 
 export const Navbar = () => {
-  const { store } = useContext(Context);
+  const { store, actions } = useContext(Context);
 
   return (
     <nav className="navbar navbar-black bg-black">
@@ -42,7 +42,7 @@ export const Navbar = () => {
                         {Item.name}
                         <i
                           className="bi bi-trash-fill borrar-favorito"
-                          onClick={() => Context.actions.deleteFavorites(Item)}
+                          onClick={() => actions.deleteFavorites(Item)}
                         ></i>
                       </a>
                     </li>
